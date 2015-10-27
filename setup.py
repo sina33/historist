@@ -1,11 +1,11 @@
 from setuptools import setup
 
-setup(name='funniest',
+setup(name='historist',
       version='0.1',
-      description='The funniest joke in the world',
-      url='http://github.com/storborg/funniest',
-      author='Flying Circus',
-      author_email='flyingcircus@example.com',
+      description='activity logger',
+      url='http://github.com/sina33/historist',
+      author='Sina Saeedi',
+      author_email='sina.saeedi@outlook.com',
       license='MIT',
-      packages=['funniest'],
+      packages=['historist'],
       zip_safe=False)
