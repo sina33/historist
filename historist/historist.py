@@ -14,4 +14,6 @@ else:
 	print "commands:"
 	print "\t-a\tadd item to table; historist -a pushup 8"
 	print "\t-s\tprint database tables; historist -s"
-	
+
+def hi():	
+	print "Welcome to historist-1.0.1"

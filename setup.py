@@ -8,4 +8,9 @@ setup(name='historist',
       author_email='sina.saeedi@outlook.com',
       license='MIT',
       packages=['historist'],
+      entry_points={
+        "console_scripts": [
+            "historist = historist:hi",
+        ]
+      },
       zip_safe=False)
