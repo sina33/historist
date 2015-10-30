@@ -4,7 +4,7 @@ except ImportError:
     from distutils.core import setup
 
 setup(name='historist',
-      version='0.1.0.dev1',
+      version='0.1.0.dev2',
       description='activity logger',
       url='http://github.com/sina33/historist',
       author='Sina Saeedi',

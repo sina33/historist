@@ -2,7 +2,7 @@ import dataset
 import os
 
 
-_db_directory = "dbase_dir/"
+_db_directory = os.path.expanduser('~')	+ "/historist_db/"	# "dbase_dir/"
 _db_filename = 'mydatabase.db'
 _db_url = "sqlite:///" + _db_directory + _db_filename
 
@@ -13,6 +13,7 @@ def get_db():
     else:
         create_db()
     _db = dataset.connect(_db_url)
+    # print _db_url
     return _db
 
 
