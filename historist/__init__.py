@@ -1,3 +1,3 @@
-from .historist import show
-from .historist import add
-from .historist import hi
+from cli import historist
+from cli import histopush
+from cli import histoplay

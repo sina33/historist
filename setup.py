@@ -1,7 +1,7 @@
 try:
-	from setuptools import setup
+    from setuptools import setup
 except ImportError:
-	from distutils.core import setup
+    from distutils.core import setup
 
 setup(name='historist',
       version='0.1.0.dev1',
@@ -13,13 +13,13 @@ setup(name='historist',
       keywords="archive events logs".split(),
       packages=['historist'],
       install_requires=[
-            "sqlalchemy>=1.0.9"
+          "sqlalchemy>=1.0.9"
       ],
       entry_points={
-        "console_scripts": [
-            "histopush = historist:add",
-	    "histoplay = historist:show",
-	    "historist = historist:hi"
-        ]
+          "console_scripts": [
+              "histopush = historist:histopush",
+              "histoplay = historist:histoplay",
+              "historist = historist:historist"
+          ]
       },
       zip_safe=False)
