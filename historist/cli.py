@@ -28,8 +28,6 @@ def historist():
         insert_event(args.insert[0], args.insert[1])
     elif args.delete_database:
         delete_tables()
-    elif args.pop:
-        pass
     else:
         print "What the hell?"
 
