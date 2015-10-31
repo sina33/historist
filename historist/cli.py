@@ -2,6 +2,7 @@ import argparse
 from historist import insert_event
 from historist import print_table_contents
 from historist import delete_tables
+from historist import insert_batch_file
 
 
 def histopush():
@@ -18,6 +19,7 @@ def historist():
     parser.add_argument('-s', '--show', action="store_true")
     parser.add_argument('-i', '--insert', nargs=2, metavar=('action', 'value'), default=[None])
     parser.add_argument('--delete-database', action="store_true", help='delete your entire database')
+    parser.add_argument('-bi', '--batch-input', nargs=1, metavar='filename', help='batch input from file', default=[])
     # parser.add_argument('--pop', action="store_true", help='remove the last entry from your database')
     args = parser.parse_args()
     if args.show:
@@ -27,6 +29,8 @@ def historist():
         insert_event(args.insert[0], args.insert[1])
     elif args.delete_database:
         delete_tables()
+    elif len(args.batch_input) > 0:
+        insert_batch_file(args.batch_input[0])
     else:
         print "Welcome to historist-0.1.0.dev2"
 

@@ -33,5 +33,20 @@ def insert_event(activity, value):
     print "successfully added"
 
 
+def insert_batch_file(filename):
+    db = db_if.get_db()
+    table = db['events']
+    infile = open(filename,'r')
+    for line in infile.readlines():
+        row = line.split(',')
+        if len(row) == 4:
+            table.insert(dict(action=row[0], value=row[1], date=row[2], time=row[3]))
+        elif len(row) == 3:
+            table.insert(dict(action=row[0], value=row[1], date=row[2]))
+        else:
+            pass
+    print "successfully added"
+
+
 if __name__ == "__main__":
     print "Welcome to historist-1.0.1"
