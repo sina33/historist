@@ -2,7 +2,6 @@ import argparse
 from historist import insert_event
 from historist import print_table_contents
 from historist import delete_tables
-# import database_interface as db_if
 
 
 def histopush():
@@ -29,7 +28,7 @@ def historist():
     elif args.delete_database:
         delete_tables()
     else:
-        print "What the hell?"
+        print "Welcome to historist-0.1.0.dev2"
 
 
 def histoplay():

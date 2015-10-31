@@ -5,8 +5,10 @@ Record your activities on daily basis. Take a look back to see if you are going 
 ```
 pip install historist
 ```
-or, from the source
+or, from the source:
 ```
+git clone https://github.com/sina33/historist.git
+cd historist
 python setup.py install
 ```
 
