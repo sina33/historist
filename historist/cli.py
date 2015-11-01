@@ -3,15 +3,17 @@ from historist import insert_event
 from historist import print_table_contents
 from historist import delete_tables
 from historist import insert_batch_file
+import os
+import sys
 
 
 def histopush():
-    parser = argparse.ArgumentParser()
-    # parser.add_argument(nargs=2, default=None)
-    parser.add_argument("action", help="the action you took")
-    parser.add_argument("value", help="how much of that action you did")
-    args = parser.parse_args()
-    insert_event(args.action, args.value)
+    exec_cmd("historist " + "-i " + " ".join(sys.argv[1:]))
+    # parser = argparse.ArgumentParser()
+    # parser.add_argument("action", help="the action you took")
+    # parser.add_argument("value", help="how much of that action you did")
+    # args = parser.parse_args()
+    # insert_event(args.action, args.value)
 
 
 def historist():
@@ -36,12 +38,21 @@ def historist():
 
 
 def histoplay():
-    # parser = argparse.ArgumentParser()
-    # parser.add_argument('action', help="the action which you want to see it's history")
-    # args = parser.parse_args()
-    # print args.action
-    # print_table_contents('actions')
-    print_table_contents('events')
+    if len(sys.argv) > 1:
+        exec_cmd("historist " + "-o " + " ".join(sys.argv[1:]))
+    else:
+        exec_cmd("historist -s")
+        # parser = argparse.ArgumentParser()
+        # parser.add_argument('action', help="the action which you want to see it's history")
+        # args = parser.parse_args()
+        # print args.action
+        # print_table_contents('actions')
+        # print_table_contents('events')
+
+
+def exec_cmd(cmd):
+    print "cmd: " + cmd
+    os.system(cmd)
 
 
 if __name__ == "__main__":
